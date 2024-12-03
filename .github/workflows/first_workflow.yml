@@ -15,4 +15,4 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Run Data Extraction
-        run: python script_data_extraction.py
+        run: python extract.py

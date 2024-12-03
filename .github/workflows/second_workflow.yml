@@ -15,4 +15,4 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: Run Visualization
-        run: python script_visualization.py
+        run: python visual.py
