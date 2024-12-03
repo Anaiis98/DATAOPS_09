@@ -1,15 +1,14 @@
-import matplotlib.pyplot as plt
 import pandas as pd
-import os
+import plotly.express as px
 
-print("Current working directory:", os.getcwd())
-try:
-    data = pd.read_csv("output_data.csv")
-    print("Data loaded successfully:\n", data.head())
-    plt.plot(data['x'], data['y'])
-    plt.title("Example Visualization")
-    plt.savefig("visualization.png")
-    print("Image saved successfully as 'visualization.png'")
-except Exception as e:
-    print("An error occurred:", str(e))
+# Charger les données
+data = pd.read_csv("output_data.csv")
+
+# Créer un graphique interactif
+fig = px.line(data, x='x', y='y', title="Interactive Visualization")
+
+# Sauvegarder en HTML
+fig.write_html("visualization.html")
+
+print("Graphique généré et sauvegardé sous 'visualization.html'")
 
